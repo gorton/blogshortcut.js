@@ -1,0 +1,9 @@
+blogshortcut.js
+http://gorton.jp/
+Copyright 2011 Gorton
+
+Includes jQuery.ready()
+http://jquery.com/
+
+このJavascriptライブラリは、ブログサイトにショートカット機能を追加します。
+主にWordpress向けに作られています。
