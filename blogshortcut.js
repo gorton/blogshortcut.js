@@ -72,6 +72,7 @@
         focusSearchBox: function(e){
             gg.cancel(e);
             var input = document.getElementById(gg.config.dynamic.sid[0]);
+            if(!input) return;
             input.focus();
         },
         blur: function(e){
