@@ -1,9 +1,18 @@
 blogshortcut.js
 http://gorton.jp/
-Copyright 2011 Gorton
 
-Includes jQuery.ready()
+Includes jQuery.ready
 http://jquery.com/
+
+Default Key Bind
+g-h: Site Top
+g-i: Page Top
+l  : Next Page
+h  : Previous Page
+k  : Next Entry
+j  : Previous Entry
+/  : Focus Search Box
+?  : Show Help
 
 このJavascriptライブラリは、ブログサイトにショートカット機能を追加します。
 主にWordpress向けに作られています。
