@@ -1,6 +1,6 @@
 /*
 * blogshortcut.js
-* version 1.0
+* version 1.0 r1
 *
 * copryright 2011 gorton
 * http://gorton.jp/
@@ -55,6 +55,7 @@
             }
             return;
         },
+        count:false,
         glb_post:false,
         interval: '',
         offsetTop: 0,
@@ -82,27 +83,36 @@
             clearInterval(gg.interval);
             var position, post, posts = gg.getElementsByClass(gg.config.dynamic.postclass[0]);
             if(!posts || !posts.length) return;
+            var poslen = posts.length;
             if(direction == 'down') {
-                for(var i=0, len=posts.length; i<len; i++) {
+                if(gg.count === false) { gg.count = 0; }
+                else { gg.count++; }
+                if(gg.count >= poslen - 1) { gg.count = poslen - 1; }
+                position = gg.getElementPosition( posts[gg.count] );
+                /*for(var i=0, len=posts.length; i<len; i++) {
                     position = gg.getElementPosition(posts[i]);
                     if(position.y > gg.currentScroller()) {
                         post = posts[i];
                         break;
                     }
-                }
+                }*/
             } else if(direction == 'up') {
-                for(var i=0, len=posts.length; i<len; i++) {
+                if(gg.count === false) return;
+                gg.count--;
+                if(gg.count < 0) gg.count = 0;
+                position = gg.getElementPosition( posts[gg.count] );
+                /*for(var i=0, len=posts.length; i<len; i++) {
                     var loopPos = gg.getElementPosition(posts[i]);
                     if(loopPos.y < gg.currentScroller()) {
                         post = posts[i];
                         position = loopPos;
                     }
-                }
+                }*/
             }
+            console.log(poslen + '/' + gg.count);
             if(!position) return;
             window.scrollTo(0, position.y);
-            //gg.putAnchor(position);
-            gg.glb_post = post;
+            gg.glb_post = posts[gg.count];
         },
         scroll: function(d){
             var speed = 10;
@@ -329,7 +339,7 @@
                 break;
             case gg.config.dynamic.top[0]:
                 gg.interval = setInterval(function(){gg.scroll( 0 );},10);
-                gg.isCombo = false;
+                gg.isCombo = false, gg.count = false;
                 gg.removeElementById('ggshortcut-anchor'), gg.glb_post = false;
                 break;
             default:
@@ -338,6 +348,7 @@
         }
     };
     gg.ready(function(){
+        console.log('rev1.0 start');
         gg.overrideKey();
         document.onkeypress = function(e) {
             e = (e) ? e:((event) ? event : null);
