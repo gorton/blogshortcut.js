@@ -95,7 +95,6 @@
                 if(gg.count < 0) gg.count = 0;
                 position = gg.getElementPosition( posts[gg.count] );
             }
-            console.log(poslen + '/' + gg.count);
             if(!position) return;
             window.scrollTo(0, position.y);
             gg.glb_post = posts[gg.count];
@@ -334,7 +333,6 @@
         }
     };
     gg.ready(function(){
-        console.log('rev1.0 start');
         gg.overrideKey();
         document.onkeypress = function(e) {
             e = (e) ? e:((event) ? event : null);
