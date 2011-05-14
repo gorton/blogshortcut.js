@@ -1,6 +1,6 @@
 /*
 * blogshortcut.js
-* version 1.0 r1
+* version 1.1
 *
 * copryright 2011 gorton
 * http://gorton.jp/
@@ -89,25 +89,11 @@
                 else { gg.count++; }
                 if(gg.count >= poslen - 1) { gg.count = poslen - 1; }
                 position = gg.getElementPosition( posts[gg.count] );
-                /*for(var i=0, len=posts.length; i<len; i++) {
-                    position = gg.getElementPosition(posts[i]);
-                    if(position.y > gg.currentScroller()) {
-                        post = posts[i];
-                        break;
-                    }
-                }*/
             } else if(direction == 'up') {
                 if(gg.count === false) return;
                 gg.count--;
                 if(gg.count < 0) gg.count = 0;
                 position = gg.getElementPosition( posts[gg.count] );
-                /*for(var i=0, len=posts.length; i<len; i++) {
-                    var loopPos = gg.getElementPosition(posts[i]);
-                    if(loopPos.y < gg.currentScroller()) {
-                        post = posts[i];
-                        position = loopPos;
-                    }
-                }*/
             }
             console.log(poslen + '/' + gg.count);
             if(!position) return;
