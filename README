@@ -14,6 +14,22 @@ j  : Previous Entry
 /  : Focus Search Box
 ?  : Show Help
 
+Custmize Params
+[Key]
+combo: First Key
+home : Transration to the Site Top
+top  : Scroll to Page Top
+next : Transration to Next Page
+prev : Transration to Previous Page
+up   : Scroll Up
+down : Scroll Down
 
-このJavascriptライブラリは、ブログサイトにショートカット機能を追加します。
-主にWordpress向けに作られています。
+[Element and Attribute]
+postclass: for Search Class Name
+rel_home : home link rel attribute
+rek_next : next link rel attribute
+rel_prev : prev link rel attribute
+rel_post : permalink rel attribute
+
+[for example]
+src="blogshortcut.js#combo=a&amp;home=h&amp;next=n&amp;rel_home=homepage"
