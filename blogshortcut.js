@@ -2,7 +2,8 @@
 * blogshortcut.js
 * version 1.1
 *
-* copryright 2011 gorton
+* modified 2011.05.18
+* Author by gorton
 * http://gorton.jp/
 *
 * Include jQuery.ready function
